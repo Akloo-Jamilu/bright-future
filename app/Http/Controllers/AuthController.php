@@ -75,4 +75,19 @@ class AuthController extends Controller
     {
         return view('dashboard');
     }
+
+
+
+    public function showCreateAccountForm()
+    {
+        return view('create-account');
+    }
+
+    public function showDebitRequestForm()
+    {
+        return view('debit-request');
+    }
+
+    
+
 }

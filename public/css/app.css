@@ -1,0 +1,512 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+body{
+    background-color: #f5f5f5;
+    color: #000000;
+    font-family: Montserrat, sans-serif;
+}
+
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #fff;
+}
+
+
+nav{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.logo{
+    color: #00AEFF;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+.nav{
+    
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40PX;
+}
+
+
+.nav__link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #1b1b1b;
+    font-weight: 500;
+}
+
+.active-link{
+    background: #00AEFF;
+    padding: 8px 20px;
+    color: white;
+    border-radius: 5px;
+}
+.home-container{
+    background-image: url(../assets/83tkHLPgg2Q.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    color: white;
+}
+.home-content{
+    max-width: 400px;
+    padding-top: 200px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    line-height: 1.5;
+    
+    
+    
+}
+h2{
+    font-size: 54px;
+}
+.button{
+    background: #00AEFF;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    width: 140px;
+}
+.button a{
+    color: #fff;
+}
+.why-container{
+    margin: 50px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+.line{
+    height: 3px;
+    width: 100px;
+    background-color: #00AEFF;
+}
+section{
+    margin: 0px 0;
+}
+h3{
+    font-size: 36px;
+    font-weight: 600;
+}
+.why-image img{
+    width: 600px;
+    height: 400px;
+    border-radius: 5px;
+}
+.why-text{
+    max-width: 550px;
+}
+.whyp{
+    font-size: 24px;
+}
+.education-container{
+ margin: 50px;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.edu{
+    width: 320px;
+    height: 200px;
+    border-radius: 5px;
+}
+.active-links{
+    color: gray;
+}
+h6{
+    font-size: 18px;
+    font-weight: 600;
+}
+.education{
+    margin-top: 70px;
+}
+.dot{
+    font-size: 14px;
+    text-align: center;
+    max-width: 300px;
+}
+.first{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.yoo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.yeah{
+    font-size: 25px;
+}
+.key{
+    font-size: 12px;
+    color: gray;
+    padding-bottom: 10px;
+}
+.person-container{
+    margin: 0 50px;
+}
+.educ{
+    width: 600px;
+    height: 800px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+.dots{
+    padding-top: 10px;
+    color: gray;
+}
+
+footer{
+    width: 100%;
+    background-color: #002333;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    margin-top: 100px;
+}
+
+.with p{
+    color: white;
+    line-height: 30px;
+    padding-top: 20px;
+    padding-right: 50px;
+
+}
+
+.footer-sm{
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.ul{
+    display: flex;
+    margin-top: 20px;
+}
+
+footer ul li {
+    list-style: none;
+   
+    
+    
+}
+
+footer .ul ul li a{
+    
+    font-size: 16px;
+    color: #fff;
+    line-height: 30px;
+    padding-right: 30px;
+}
+
+footer ul li p {
+    
+    font-size: 16px;
+    color: #fff;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: 800;
+ }
+
+
+ .email-bar{
+    width: 270px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: #4f4f4f;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+.email-bar input{
+    background:transparent;
+    border: 0;
+    outline: none;
+    flex: 1;
+    color: white;
+    padding-left: 20px;
+}
+.email-bar button{
+    border: 0;
+    background: #00AEFF ;
+    height: 45px;
+    width: 130px;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+footer h6{
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+}
+
+.lins{
+    height: 2px;
+    background-color: gray;
+    width: 335px;
+    margin-top: 20px;
+}
+.pri{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-top: 20px;
+}
+.pri a{
+    color: gray;
+    font-size: 16px;
+}
+.copy p{
+    color: gray;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.car{
+    display: flex;
+    margin-left: 30px;
+    margin-right: 50px;
+    justify-content: space-between;
+    }
+
+   
+
+.with p{
+    width: 400px;
+
+}
+
+
+
+
+
+
+
+
+.lins{
+    
+    width: calc(100% - 60px);
+    margin: 20px auto;
+   
+}
+
+.out{
+display: flex;
+justify-content: space-between;
+margin-left: 30px;
+margin-right: 30px;
+flex-direction: row-reverse;
+}
+
+
+.pri{
+display: flex;
+gap: 50px;
+}
+.copy p{
+    
+    font-size: 12px;
+    
+}
+
+.form-field{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before{
+    content: '';
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    background: #00AEFF;
+    
+}
+
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3 ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-bottom: #00AEFF;
+}
+form .buttons{
+    height: 45px;
+    margin: 20px 0 20px 0;
+
+}
+ form .buttons input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    color: #fff;
+    background: #00AEFF;
+    cursor: pointer;
+ }
+ form .buttons input:hover{
+    background: #002333;
+ }
+
+ .active{
+    border: 1px solid #00AEFF;
+    padding: 8px 20px;
+    color: #00AEFF;
+    border-radius: 5px;
+ }
+ 
+ .login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+ }
+ span a{
+    color: #00AEFF;
+ }
+ .account{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .user-detail{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 12px 0;
+ }
+ form .user-detail .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+.user-detail .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-detail .input-box input{
+    height: 45px;
+    width: 340px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3 ease;
+}
+.user-detail .input-box input:focus,
+.user-detail .input-box input:valid{
+    border-bottom: #00AEFF;
+}
+.containers{
+    max-width: 400px;
+    width: 100%;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.containers .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.containers .title::before{
+    content: '';
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    background: #00AEFF;
+    
+}
