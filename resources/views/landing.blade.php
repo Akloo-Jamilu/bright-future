@@ -87,7 +87,7 @@
             <div class="home-container">
                 <div class="home-content">
                   <h2>LEARNING <br>EXCELLENCE</h2>
-                  <p>Welcome to Bright Future School.
+                  <p>Welcome to Bright Future.
                     A modern, global school for a modern,
                     global academic experience.
                   </p>
@@ -101,7 +101,7 @@
             <div class="why-container">
                 <div class="why-image"><img src="./assets/O5EMzfdxedg.png" alt=""></div>
                 <div class="why-text">
-                    <h3>Why BFS</h3>
+                    <h3>Why BF</h3>
                     <div class="line"></div> <br> <br>
                     <p class="whyp">Bright Future School is an institute that takes pride in the growth of our students, not just as intellectuals but also as responsible members of the society.
 
@@ -156,7 +156,7 @@
      <footer>
         <div class="car">
           <div class="let">
-            <a href="#" class="logo">BFS.</a>
+            <a href="#" class="logo">BF.</a>
             <div class="with">
               <p>
                 Education is tailored to students with disabilities. it involves

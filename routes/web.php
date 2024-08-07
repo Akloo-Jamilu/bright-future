@@ -9,9 +9,19 @@ Route::get('/', function () {
     return view('landing');
 })->name('home');
 
-Route::get('/create-account', function () {
-    return view('create-account');
-});
+// Route::get('/create-account', function () {
+//     return view('create-account');
+// });
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// });
+
+;
+// Route::get('/debit-request', function () {
+//     return view('debit_request');
+// })
+
 
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
@@ -23,26 +33,36 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 });
 
+// Route::middleware('auth')->group(function () {
+//     Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
+//     Route::get('/create-account', [AuthController::class, 'showCreateAccountForm'])->name('createAccount');
+//     Route::get('/debit-request', [AuthController::class, 'showDebitRequestForm'])->name('debitRequest');
+// });
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
     Route::get('/create-account', [AuthController::class, 'showCreateAccountForm'])->name('createAccount');
     Route::get('/debit-request', [AuthController::class, 'showDebitRequestForm'])->name('debitRequest');
+    // Route::post('/create-account', [AuthController::class, 'createAccount'])->name('createAccount.post');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
+
 
 
 
 // routes/web.php
-Route::post('/create-account', [createAccount::class, 'create']);
-Route::post('/create-transaction', [debitRequest::class, 'create']);
+// Route::post('/create-account', [createAccount::class, 'create']);
+// Route::post('/create-transaction', [debitRequest::class, 'create']);
 
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
-    Route::get('/create-business', [AuthController::class, 'showCreateAccountForm'])->name('createBusinessContent');
-    Route::get('/debit-request', [AuthController::class, 'showDebitRequestForm'])->name('debitRequestContent');
-    Route::get('/home', [AuthController::class, 'homeContent'])->name('homeContent');
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
+//     Route::get('/create-business', [AuthController::class, 'showCreateAccountForm'])->name('createBusinessContent');
+//     Route::get('/debit-request', [AuthController::class, 'showDebitRequestForm'])->name('debitRequestContent');
+//     Route::get('/home', [AuthController::class, 'homeContent'])->name('homeContent');
+//     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+// });
 
 

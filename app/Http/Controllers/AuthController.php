@@ -68,7 +68,7 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 
     public function dashboard()
@@ -87,7 +87,6 @@ class AuthController extends Controller
     {
         return view('debit-request');
     }
-
     
 
 }
