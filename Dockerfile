@@ -1,40 +1,17 @@
-# Use the official PHP image as the base image
-FROM php:8.1-fpm
+# Use the official PHP image with FPM
+FROM php:8.2-fpm
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    libpng-dev \
-    libjpeg62-turbo-dev \
-    libfreetype6-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip \
-    unzip || true \
- && apt-get install -y --fix-missing
+# Set the working directory
+WORKDIR /var/www/html
 
-# Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+# Copy the application code into the container
+COPY . /var/www/html
 
-# Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+# Install any PHP extensions required
+RUN docker-php-ext-install pdo pdo_mysql
 
-# Set working directory
-WORKDIR /var/www
-
-# Install composer
-COPY --from=composer:2.5.7 /usr/bin/composer /usr/bin/composer
-
-# Copy existing application directory contents
-COPY . /var/www
-
-# Copy existing application directory permissions
-COPY --chown=www-data:www-data . /var/www
-
-# Change current user to www
-USER www-data
-
-# Expose port 9000 and start php-fpm server
+# Expose the port on which the app will run
 EXPOSE 9000
+
+# Start PHP-FPM
 CMD ["php-fpm"]
