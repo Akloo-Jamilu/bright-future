@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: laravel-app
+    container_name: laravel-app-container
     volumes:
       - .:/var/www
     ports:
@@ -16,7 +16,7 @@ services:
     container_name: laravel-nginx
     volumes:
       - .:/var/www
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
       - "80:80"
     depends_on:
