@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+
 
 use Illuminate\Http\Request;
 
@@ -50,9 +52,30 @@ class AuthController extends Controller
     {
         $credentials = $request->only('email', 'password');
 
+        // Default user credentials
+        $defaultUserEmail = 'testtean@testing.com'; // Replace with your default email
+        $defaultUserPassword = 'testing123'; // Replace with your default password
+
+        // Check if provided credentials match the default credentials
+        if ($credentials['email'] === $defaultUserEmail && $credentials['password'] === $defaultUserPassword) {
+            $user = User::where('email', $defaultUserEmail)->first();
+            if (!$user) {
+                // Create the default user if it does not exist
+                $user = User::create([
+                    'first_name' => 'Default',
+                    'last_name' => 'User',
+                    'email' => $defaultUserEmail,
+                    'password' => Hash::make($defaultUserPassword),
+                ]);
+            }
+            Auth::login($user);
+            $request->session()->regenerate();
+            return redirect()->intended('dashboard');
+        }
+
+        // Normal login attempt
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
             return redirect()->intended('dashboard');
         }
 
@@ -60,6 +83,8 @@ class AuthController extends Controller
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
+
+
 
     public function logout(Request $request)
     {
@@ -87,6 +112,4 @@ class AuthController extends Controller
     {
         return view('debit-request');
     }
-    
-
 }
