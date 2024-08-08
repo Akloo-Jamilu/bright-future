@@ -14,25 +14,33 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
+    libzip-dev \
     libonig-dev \
-    libxml2-dev
-
-# Install PHP extensions
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    libpq-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
-    && docker-php-ext-install mysqli pdo pdo_mysql
+    && docker-php-ext-install zip \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql \
+    && apt-get clean
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install Laravel dependencies
-RUN composer install --optimize-autoloader --no-dev
+RUN composer install
 
-# Expose port 8000 for the Laravel app
-EXPOSE 8000
+# Ensure storage and cache directories are writable
+RUN chown -R www-data:www-data storage bootstrap/cache
+
+# Expose port 8080 for the Laravel app
+EXPOSE 8080
 
 # Run Laravel migrations
 RUN php artisan migrate --force
 
 # Start Laravel
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
+
+
+
+
