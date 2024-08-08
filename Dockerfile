@@ -31,5 +31,8 @@ RUN composer install --optimize-autoloader --no-dev
 # Expose port 8000 for the Laravel app
 EXPOSE 8000
 
+# Run Laravel migrations
+RUN php artisan migrate --force
+
 # Start Laravel
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]

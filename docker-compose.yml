@@ -7,12 +7,13 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DB_CONNECTION=null
-      - DB_HOST=127.0.0.1
-      - DB_PORT=3306
-      - DB_DATABASE=
-      - DB_USERNAME=
-      - DB_PASSWORD=
+    - DB_CONNECTION=pgsql
+    - DB_HOST=dpg-cqp8t4aj1k6c73dfa0ng-a
+    - DB_PORT=5432
+    - DB_DATABASE=prune
+    - DB_USERNAME=prune_user
+    - DB_PASSWORD=pX62h2kSeoiWlNmfB6DcHi3q0pmK8AJr
+
     volumes:
       - .:/var/www/html
     command: ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
